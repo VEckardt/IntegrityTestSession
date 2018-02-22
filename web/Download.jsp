@@ -22,9 +22,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Test Session Download</title>
+        <link rel="stylesheet" type="text/css" href="images/acls.css" />
         <link rel="stylesheet" type="text/css" href="images/layout.css" />
+        <style>
+            body {
+                background-image: url(./images/IntegrityWithSymbol.png);            
+                background-origin: content-box;
+                background-repeat: no-repeat;
+                background-position: left 10px top 10px;
+            }
+        </style>
     </head>
     <body>
+        <div align=right><%=new java.util.Date()%></div>
+        <h1>Test Session Loader</h1>         
         <a href='/IntegrityTestSession'>Logout</a>&nbsp;&gt;&nbsp;
         <%
             out.println("<a href='/IntegrityTestSession/TestSession.jsp;jsessionid=" + session.getId() + "'>Back</a>");
