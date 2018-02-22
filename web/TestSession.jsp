@@ -13,23 +13,33 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Test Session</title>
+        <link rel="stylesheet" href="images/acls.css" type="text/css" />
         <link rel="stylesheet" href="images/layout.css" type="text/css" />
+        <style>
+            body {
+                background-image: url(./images/IntegrityWithSymbol.png);            
+                background-origin: content-box;
+                background-repeat: no-repeat;
+                background-position: left 10px top 10px;
+            }
+        </style>          
     </head>
     <body>
         <%@ page import="utils.*" isThreadSafe="false"%>
+        <div align=right><%=new java.util.Date()%></div>
+        <h1>Test Session Loader</h1>
         <a href='/IntegrityTestSession'>Logout</a>
         <hr>
         <div class="tabreiter">
             <ul>
                 <li>
-                    <input type="radio" name="tabreiter-0" checked="checked" id="tabreiter-0-0" /><label for="tabreiter-0-0">Download</label>
+                    <input type="radio" name="tabreiter-0" checked="checked" id="tabreiter-0-0" /><label for="tabreiter-0-0">Test Session Download</label>
                     <div>
-                        <h3>Test Session Download</h3>
                         <%
                             out.println("<form name='frm' action='/IntegrityTestSession/Download.jsp;jsessionid=" + session.getId() +
                             "' method='get' enctype='multipart/form-data'>");
                         %>
-                        <p>Please select the test session that you want to download:</p>
+                        <p>Please select the Test Session that you want to download:</p>
                         <% 
 
             String uname = (String) session.getAttribute("uname");
@@ -44,13 +54,13 @@
                         %>                         
                     </div>
                 </li><li>
-                    <input type="radio" name="tabreiter-0" id="tabreiter-0-1" /><label for="tabreiter-0-1">Upload</label>
+                    <input type="radio" name="tabreiter-0" id="tabreiter-0-1" /><label for="tabreiter-0-1">Test Session Upload</label>
                     <div>
-                        <h3>Test Session Upload</h3>
                         <%
                             out.println("<form name='frm' action='/IntegrityTestSession/Upload.jsp;jsessionid=" + session.getId() +
                             "' method='post' enctype='multipart/form-data'>");
                         %> 
+                        <p>Please select the Excel file that you want to upload:</p>
                         <input type="file" name="fl_upload">
                         <input type="submit" value="Upload">
                         <input type="reset" value="cancel">

@@ -1,4 +1,10 @@
 #index { position:absolute; top:10px; left:10px;}
+body {
+    background-image: url(./images/IntegrityWithSymbol.png);            
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-position: left 10px top 10px;
+}
 TD
 {
     border-style: none solid dotted none;

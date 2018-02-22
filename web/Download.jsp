@@ -33,10 +33,8 @@
         <div class="tabreiter">
             <ul>
                 <li>
-                    <input type="radio" name="tabreiter-0" checked="checked" id="tabreiter-0-1" /><label for="tabreiter-0-1">Download</label>
+                    <input type="radio" name="tabreiter-0" checked="checked" id="tabreiter-0-1" /><label for="tabreiter-0-1">Test Session Download Log</label>
                     <div>
-                        <h3>Test Session Download Log</h3>
-
                         <%
                             try {
                                     String uname = (String) session.getAttribute("uname");

@@ -35,9 +35,8 @@
         <div class="tabreiter">
             <ul>
                 <li>
-                    <input type="radio" name="tabreiter-0" checked="checked" id="tabreiter-0-1" /><label for="tabreiter-0-1">Upload</label>
+                    <input type="radio" name="tabreiter-0" checked="checked" id="tabreiter-0-1" /><label for="tabreiter-0-1">Test Session Upload Log</label>
                     <div>
-                        <h3>Test Session Upload Log</h3>
                         <%
                             try {
                                 boolean isMultipart = ServletFileUpload.isMultipartContent(request);
