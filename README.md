@@ -43,8 +43,10 @@ In case of issues please check the server log
 ## Some Screenshots
 
 ![IntegrityTestSession](doc/TestSession1.PNG)
-![IntegrityTestSession](doc/TestSession2-2.PNG)
+
 ![IntegrityTestSession](doc/TestSession2.PNG)
+![IntegrityTestSession](doc/TestSession2-2.PNG)
+
 ![IntegrityTestSession](doc/TestSession3-1.PNG)
 ![IntegrityTestSession](doc/TestSession3-2.PNG)
 ![IntegrityTestSession](doc/TestSession3-3.PNG)
