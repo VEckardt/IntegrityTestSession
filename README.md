@@ -6,6 +6,7 @@ HINT: there is a similar local app available, please see project "IntegrityExcel
 
 ## Use Cases
 - Offline Test Result editor in Excel
+- Entering Test Results just with a Tablet PC (without Integrity Client installed)
 - Open Point: Full test session export or just the remainin open test results
 
 ## Install
