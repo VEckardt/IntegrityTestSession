@@ -1,8 +1,8 @@
 # Integrity Test Session
-Offers the download and upload of Test Cases, Test Steps and Results from Integrity to Excel. Its the Web only solution, you dont have to install any client tool. The implementation is done using JSPs and Java, which will finally be compiled to Servlets.
-Although its a server process, I assume that the workload for a server is very similar to a local java program.
+Offers the download and upload of Test Cases, Test Steps and Results from Integrity to Excel. It's the Web only solution, you don't have to install any client tool. The implementation is done using JSPs and Java, which will finally be compiled to Servlets.
+Although it's a server process, I assume that the workload for a server is very similar to a local java program.
 
-Please see this solution as a try out how a fully server based program can be developed in combination with Integrity. It ca be seen as a prototype for this kinds of solutions like data loader, smaller batch jobs with user interaction, etc.  
+Please see this solution as a try out how a fully server based program can be developed in combination with Integrity. It can be seen as a prototype for this kind of solutions like data loader, smaller batch jobs with user interaction, etc.  
 
 HINT: there is a similar local app available, please see project "IntegrityExcelTestSession"
 
@@ -11,10 +11,10 @@ HINT: there is a similar local app available, please see project "IntegrityExcel
 ## Use Cases
 - Offline Test Result editor in Excel
 - Entering Test Results just with a Tablet PC (without Integrity Client installed)
-- Open Point: Full test session export or just the remainin open test results
+- Open Point: Option, to select "Full test session export" or just the "remaining open test cases"
 
 ## Install
-- Put the "dist/IntegrityExcelUpload.war" directly into your "<IntegrityServer>/server/mks/deploy" folder
+- Put the "dist/IntegrityTestSession.war" directly into your "<IntegrityServer>/server/mks/deploy" folder
 - Put the "doc/TestSessionTemplate.xlsx" directly into your "<IntegrityServer>/public_html" folder
 
 ## Template
