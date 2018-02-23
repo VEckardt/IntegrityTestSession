@@ -16,6 +16,7 @@ HINT: there is a similar local app available, please see project "IntegrityExcel
 ## Install
 - Put the "dist/IntegrityTestSession.war" directly into your "<IntegrityServer>/server/mks/deploy" folder
 - Put the "doc/TestSessionTemplate.xlsx" directly into your "<IntegrityServer>/public_html" folder
+- Create a Query "My Active Test Sessions" that should return the "In Testing" state Test Sessions assigned to me
 
 ## Template
 The Template file (see doc/TestSessionTemplate.xlsx) can be tailord for your needs
