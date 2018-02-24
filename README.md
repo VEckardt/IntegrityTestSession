@@ -48,7 +48,7 @@ In case of issues please check the server log
 
 ## Some Screenshots
 
-![IntegrityTestSession](doc/TestSession1.PNG| width=400)
+![IntegrityTestSession](doc/TestSession1.PNG){:width="400px"}
 
 ![IntegrityTestSession](doc/TestSession2.PNG| width=400)
 ![IntegrityTestSession](doc/TestSession2-2.PNG| width=400)
