@@ -5,6 +5,9 @@
 package excel;
 
 import api.IntegritySession;
+import api.commands.TMCreateResult;
+import api.commands.TMEditResult;
+import api.commands.TMTestCases;
 import com.mks.api.Command;
 import com.mks.api.Option;
 import com.mks.api.response.APIException;
@@ -78,11 +81,7 @@ public class ExcelTSImport {
                         logText += "Importing Case " + tcRow.getCell(0).getStringCellValue() + " with result '" + tcResult + "' ... ";
                         importResult(sessionID, testCaseID, stepMap, tcResult.contentEquals("-") ? "" : tcResult, tcAnnotation);
                         logText += "ok\n";
-                        // tcRow.getCell(6).setCellValue("ok");
-                        // tcRow.getCell(7).setCellValue("");
                     } catch (APIException ex) {
-                        // tcRow.getCell(6).setCellValue("error");
-                        // tcRow.getCell(7).setCellValue(ex.getMessage());
                         logText += ex.getMessage() + "\n";
                         errCnt++;
                     }
@@ -107,12 +106,12 @@ public class ExcelTSImport {
 
         if (tcRow != null) {
             try {
+                logText += "Importing Case " + tcRow.getCell(0).getStringCellValue() + " with result '" + tcResult + "' ... ";
                 importResult(sessionID, testCaseID, stepMap, tcResult.contentEquals("-") ? "" : tcResult, tcAnnotation);
-                tcRow.getCell(6).setCellValue("ok");
-                tcRow.getCell(7).setCellValue("");
+                logText += "ok\n";
             } catch (APIException ex) {
-                tcRow.getCell(6).setCellValue("error");
-                tcRow.getCell(7).setCellValue(ex.getMessage());
+                logText += ex.getMessage() + "\n";
+                errCnt++;
             }
         }
 
@@ -151,8 +150,7 @@ public class ExcelTSImport {
         Map<String, String> currentResults = new HashMap<>();
 
         // Step one list test steps in session
-        Command cmd4 = new Command(Command.TM, "testcases");
-        cmd4.addOption(new Option("fields", "ID,Test Steps"));
+        TMTestCases cmd4 = new TMTestCases("ID,Test Steps");
         cmd4.addSelection(sessionID);
         Response response = apiSession.execute(cmd4);
         // WorkItemIterator witDoc = response.getWorkItems();
@@ -193,10 +191,7 @@ public class ExcelTSImport {
         try {
             // first, try to create a new result
             // if this works, fine, otherwiese move on with edit instead
-            Command cmd2 = new Command(Command.TM, "createresult");
-            cmd2.addOption(new Option("sessionID", sessionID));
-            cmd2.addOption(new Option("verdict", verdict));
-            cmd2.addOption(new Option("annotation", annotation));
+            TMCreateResult cmd2 = new TMCreateResult(sessionID, verdict, annotation);
 
             String newResultString = verdict + ";" + annotation;
 
@@ -210,7 +205,7 @@ public class ExcelTSImport {
                 // System.out.print(me.getKey() + ": ");
                 // System.out.println(me.getValue());
 
-                cmd2.addOption(new Option("stepVerdict", "stepID=" + tr.getID() + ":verdict=" + tr.getVerdict2() + ":annotation=" + tr.getAnnotation() + ""));
+                cmd2.addStepVerdict("stepID=" + tr.getID() + ":verdict=" + tr.getVerdict2() + ":annotation=" + tr.getAnnotation() + "");
                 newResultString = newResultString + ";" + tr.getVerdict() + ";" + tr.getAnnotation();
             }
 
@@ -234,10 +229,7 @@ public class ExcelTSImport {
             try {
                 Logger.getLogger(ExcelTSImport.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
                 // try overwrting
-                Command cmd3 = new Command(Command.TM, "editresult");
-                cmd3.addOption(new Option("sessionID", sessionID));
-                cmd3.addOption(new Option("verdict", verdict));
-                cmd3.addOption(new Option("annotation", annotation));
+                TMEditResult cmd3 = new TMEditResult(sessionID, verdict, annotation);
 
                 String newResultString = verdict + ";" + annotation;
 
@@ -251,7 +243,7 @@ public class ExcelTSImport {
                     // System.out.print(me.getKey() + ": ");
                     // System.out.println(me.getValue());
 
-                    cmd3.addOption(new Option("stepVerdict", "stepID=" + tr.getID() + ":verdict=" + tr.getVerdict2() + ":annotation=" + tr.getAnnotation() + ""));
+                    cmd3.addStepVerdict("stepID=" + tr.getID() + ":verdict=" + tr.getVerdict2() + ":annotation=" + tr.getAnnotation() + "");
                     newResultString = newResultString + ";" + tr.getVerdict() + ";" + tr.getAnnotation();
                 }
                 cmd3.addSelection(testCaseID);

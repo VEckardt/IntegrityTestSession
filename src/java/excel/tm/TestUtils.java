@@ -19,7 +19,7 @@ public class TestUtils {
     // Private
     public static Boolean addSeparateDefectSection = true;
 
-    private static Map<String, Boolean> testCaseTypes = new TreeMap<String, Boolean>();
+    private static Map<String, Boolean> testCaseTypes = new TreeMap<>();
     public static TestResultFieldList testResultFields = new TestResultFieldList();
 
     public static void init(IntegritySession imSession) throws APIException {

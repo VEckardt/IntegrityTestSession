@@ -18,7 +18,6 @@ import java.util.ArrayList;
  * @author veckardt
  */
 public class TestResultFieldList extends ArrayList<TestResultField> {
-// ArrayList<TestResultField> {
 
     // public static ArrayList <TestResultField> fieldList = new ArrayList <TestResultField>();
     public void init(IntegritySession imSession) throws APIException {
@@ -31,7 +30,6 @@ public class TestResultFieldList extends ArrayList<TestResultField> {
             this.add(new TestResultField(wi.getId()));
             // log ("Adding ResultField: "+wi.getId(),1);
         }
-
     }
 
 //    public TestResultFieldList (WorkItem wi) {

@@ -12,6 +12,7 @@ import com.mks.api.response.Response;
 import com.mks.api.response.WorkItem;
 import com.mks.api.response.WorkItemIterator;
 import api.ExceptionHandler;
+import api.commands.TMTestCases;
 import static excel.ExcelWorkbook.copyRow;
 import static excel.ExcelWorkbook.deleteRow;
 import excel.tm.TestResult;
@@ -101,8 +102,7 @@ public class ExcelTSExport {
             // First Target Row = 7th
             int rownum = 6;
             // Get all test cases in the session
-            Command cmd = new Command(Command.TM, "testcases");
-            cmd.addOption(new Option("substituteParams"));
+            TMTestCases tc = new TMTestCases("Text,Test Steps,Expected Results");
 
             // if (mode == 2) {
             //     cmd.addOption(new Option("queryDefinition", "(field[Last Result] contains \"Not Run\")"));
@@ -110,9 +110,8 @@ public class ExcelTSExport {
             // cmd.addOption(new Option("AsOf", dfDayTimeUS.format(asOfDate)));
             // }
             // cmd.addOption(new Option("fields", "ID,Text::rich,Test Steps"));
-            cmd.addOption(new Option("fields", "Text,Test Steps,Expected Results"));
-            cmd.addSelection(sessionID);
-            Response response = apiSession.execute(cmd);
+            tc.addSelection(sessionID);
+            Response response = apiSession.execute(tc);
 
             int count = 2;
 
@@ -232,7 +231,6 @@ public class ExcelTSExport {
 //        // logArea.appendText("\n" + text);
 //        System.out.println(text);
 //    }
-
     private String getString(String text) {
         if (text == null) {
             return "";
