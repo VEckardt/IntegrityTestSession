@@ -15,18 +15,10 @@
         <title>Test Session</title>
         <link rel="stylesheet" href="images/acls.css" type="text/css" />
         <link rel="stylesheet" href="images/layout.css" type="text/css" />
-        <style>
-            body {
-                background-image: url(./images/IntegrityWithSymbol.png);            
-                background-origin: content-box;
-                background-repeat: no-repeat;
-                background-position: left 10px top 10px;
-            }
-        </style>          
     </head>
     <body>
         <%@ page import="utils.*" isThreadSafe="false"%>
-        <div align=right><%=new java.util.Date()%></div>
+        <div class="date"><%=new java.util.Date()%></div>
         <h1>Test Session Loader</h1>
         <a href='/IntegrityTestSession'>Logout</a>
         <hr>

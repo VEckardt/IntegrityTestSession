@@ -11,19 +11,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="images/acls.css" media="screen">
         <link rel="stylesheet" type="text/css" href="images/aclsprint.css" media="print">        
+        <link rel="stylesheet" type="text/css" href="images/layout.css" media="screen">
         <title>Test Session</title>
-        <style>
-            body {
-                background-image: url(./images/IntegrityWithSymbol.png);            
-                background-origin: content-box;
-                background-repeat: no-repeat;
-                background-position: left 10px top 10px;
-            }
-        </style>        
     </head>
     <body>
         <form method="post" action="login.jsp">
-            <div align=right><%=new java.util.Date()%></div>
+            <div class="date"><%=new java.util.Date()%></div>
             <h1>Test Session Loader</h1>                
             <center><br><br>
                 <table border="1" width="30%" cellpadding="3">

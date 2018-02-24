@@ -37,6 +37,12 @@ hr {
     border: none;
 }
 
+.date
+{
+    text-align: right;
+    font-size: smaller;
+}
+
 .tabreiter
 {
     width: 100%;
@@ -148,4 +154,11 @@ hr {
 {
     opacity: .5;
     cursor: no-drop;
+}
+
+body {
+    background-image: url(IntegrityWithSymbol.png);            
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-position: left 10px top 10px;
 }

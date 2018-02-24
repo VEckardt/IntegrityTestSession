@@ -28,17 +28,9 @@
         <title>Test Session Upload</title>
         <link rel="stylesheet" type="text/css" href="images/acls.css" />
         <link rel="stylesheet" type="text/css" href="images/layout.css" />
-        <style>
-            body {
-                background-image: url(./images/IntegrityWithSymbol.png);            
-                background-origin: content-box;
-                background-repeat: no-repeat;
-                background-position: left 10px top 10px;
-            }
-        </style>
     </head>
     <body>
-        <div align=right><%=new java.util.Date()%></div>
+        <div class="date"><%=new java.util.Date()%></div>
         <h1>Test Session Loader</h1>        
         <a href='/IntegrityTestSession'>Logout</a>&nbsp;&gt;&nbsp;
         <%
@@ -66,13 +58,13 @@
     
                                 }
                             } catch (FileUploadException ex) {
-                                Logger.getLogger(ExcelTSImport.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+                                Logger.getLogger("Upload").log(Level.SEVERE, ex.getMessage(), ex);
                                 out.println("ERROR 1:" + ex.getMessage());
                             } catch (IOException ex) {
-                                Logger.getLogger(ExcelTSImport.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+                                Logger.getLogger("Upload").log(Level.SEVERE, ex.getMessage(), ex);
                                 out.println("ERROR 2:" + ex.getMessage());
                             } catch (APIException ex) {
-                                Logger.getLogger(ExcelTSImport.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+                                Logger.getLogger("Upload").log(Level.SEVERE, ex.getMessage(), ex);
                                 out.println("ERROR 3:" + ex.getMessage());
                             }
                         %>
