@@ -153,8 +153,7 @@ public class ExcelTSImport {
         TMTestCases cmd4 = new TMTestCases("ID,Test Steps");
         cmd4.addSelection(sessionID);
         Response response = apiSession.execute(cmd4);
-        // WorkItemIterator witDoc = response.getWorkItems();
-        // while (witDoc.hasNext()) {
+
         WorkItem workItem = response.getWorkItem(testCaseID);
         // get current results
         TestResult trc = new TestResult(apiSession, "viewresult", sessionID + ":" + testCaseID, null);
