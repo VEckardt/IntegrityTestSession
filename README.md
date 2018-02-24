@@ -44,7 +44,7 @@ In case of issues please check the server log
 - Java 1.8
 
 ## Known Limitations
-- This local application does not support images to display. The Test Case text downloaded is always plain text only.
+- This application does not support Test Case images to display. The Test Case text downloaded is always plain text only.
 
 ## Some Screenshots
 
