@@ -1,0 +1,5 @@
+doc/dir.bat
+build/
+doc/dir.txt
+nbproject/private/
+nbproject/build-impl.xml~
