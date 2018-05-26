@@ -1,4 +1,4 @@
-# Integrity Test Session
+# Integrity Test Session for Web
 Offers the download and upload of Test Cases, Test Steps and Results from Integrity to Excel. It's the Web only solution, you don't have to install any client tool. The implementation is done using JSPs and Java, which will finally be compiled to Servlets.
 Although it's a server process, I assume that the workload for a server is very similar to a local java program.
 
